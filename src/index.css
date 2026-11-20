@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-soil: #4a3c35;
+  --color-cream: #f7f2e6;
+  --color-leaf: #00a99d;
+  --color-sky: #84e0ff;
+  --color-sky-pale: #b3ecff;
+  --font-body: "Outfit", system-ui, sans-serif;
+  --font-display: "Mali", "Outfit", cursive;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+@keyframes wiggle {
+  0%, 100% { rotate: -6deg; }
+  50% { rotate: 6deg; }
+}
+.wiggle { animation: wiggle 0.25s ease-in-out 2; transform-origin: 50% 100%; }
+@media (prefers-reduced-motion: reduce) { .wiggle { animation: none; } }
