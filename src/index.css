@@ -1,28 +1,19 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @theme {
+  --font-sans: "Outfit", system-ui, sans-serif;
   --color-soil: #4a3c35;
-  --color-cream: #f7f2e6;
-  --color-leaf: #00a99d;
-  --color-sky: #84e0ff;
-  --color-sky-pale: #b3ecff;
-  --font-body: "Outfit", system-ui, sans-serif;
-  --font-display: "Mali", "Outfit", cursive;
+  --color-cream: #f7f1e3;
+  --color-sky: #b3ecff;
+  --color-teal: #00b0a0;
 }
 
-html, body, #root { height: 100%; }
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  overscroll-behavior: none;
-  -webkit-user-select: none;
-  user-select: none;
-  touch-action: manipulation;
-}
+html, body, #root { height: 100%; margin: 0; overscroll-behavior: none; }
+body { font-family: var(--font-sans); color: var(--color-soil); user-select: none; -webkit-user-select: none; }
+.sky { background: linear-gradient(#fff, #7fdfff); }
 
-@keyframes wiggle {
-  0%, 100% { rotate: -6deg; }
-  50% { rotate: 6deg; }
-}
-.wiggle { animation: wiggle 0.25s ease-in-out 2; transform-origin: 50% 100%; }
-@media (prefers-reduced-motion: reduce) { .wiggle { animation: none; } }
+@keyframes wiggle { 0%,100% { rotate: -8deg } 50% { rotate: 8deg } }
+.wiggle { animation: wiggle 0.15s 3; }
+@keyframes pop { from { scale: 0.5; rotate: -15deg } to { scale: 1; rotate: -6deg } }
+.pop { animation: pop 0.3s ease-out; }
